@@ -1,5 +1,10 @@
 # Change log
 
+# 3.5.5 2026-4-16 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Upgrade Mermaid from v8.8.0 to v11.14.0, fixing syntax errors with newer Mermaid diagrams.
+- Replace deprecated `markdown-it-mermaid` package with a lightweight built-in plugin.
+- Load Mermaid locally instead of from CDN for better offline support and reliability.
+
 # 3.5.4 2025-4-28
 - Support edit excel and csv file.
 

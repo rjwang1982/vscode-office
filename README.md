@@ -1,4 +1,6 @@
-# Officew Viewer
+# Office Viewer (Fork)
+
+> Forked from [cweijan/vscode-office](https://github.com/cweijan/vscode-office), maintained by [RJ.Wang](mailto:wangrenjun@gmail.com).
 
 ## Introduction
 
@@ -61,4 +63,5 @@ Database Client for Visual Studio Code, supporting the management **MySQL/MariaD
   - [myliang/x-spreadsheet](https://github.com/myliang/x-spreadsheet): XLSX rendering
 - HTTP: [Rest  Client](https://github.com/Huachao/vscode-restclient)
 - Markdown: [Vanessa219/vditor](https://github.com/Vanessa219/vditor)
+- Mermaid diagrams: [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid)
 - Material Icon theme: [PKief/vscode-material-icon-theme](https://github.com/PKief/vscode-material-icon-theme)

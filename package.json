@@ -20,13 +20,13 @@
 		"Other"
 	],
 	"bugs": {
-		"url": "https://github.com/cweijan/vscode-office/issues",
-		"email": "cweijan@163.com"
+		"url": "https://github.com/rjwang1982/vscode-office/issues",
+		"email": "wangrenjun@gmail.com"
 	},
-	"homepage": "https://github.com/cweijan/vscode-office/blob/master/README.md",
+	"homepage": "https://github.com/rjwang1982/vscode-office/blob/master/README.md",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/cweijan/vscode-office.git"
+		"url": "https://github.com/rjwang1982/vscode-office.git"
 	},
 	"activationEvents": [
 		"onStartupFinished"
@@ -532,7 +532,6 @@
 		"markdown-it": "^14.1.0",
 		"markdown-it-anchor": "^9.2.0",
 		"markdown-it-checkbox": "^1.1.0",
-		"markdown-it-mermaid": "^0.2.5",
 		"markdown-it-plantuml": "^1.4.1",
 		"markdown-it-toc-done-right": "^4.2.0",
 		"mustache": "^4.0.1",

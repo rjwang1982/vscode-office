@@ -1,4 +1,6 @@
-# Office Viewer
+# Office Viewer (Fork)
+
+> Fork 自 [cweijan/vscode-office](https://github.com/cweijan/vscode-office)，由 [RJ.Wang](mailto:wangrenjun@gmail.com) 維護。
 
 ## 介紹
 
@@ -61,4 +63,5 @@
   - [myliang/x-spreadsheet](https://github.com/myliang/x-spreadsheet): XLSX rendering
 - HTTP: [Rest  Client](https://github.com/Huachao/vscode-restclient)
 - Markdown: [Vanessa219/vditor](https://github.com/Vanessa219/vditor)
+- Mermaid 圖表: [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid)
 - Material Icon theme: [PKief/vscode-material-icon-theme](https://github.com/PKief/vscode-material-icon-theme)
