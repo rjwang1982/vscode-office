@@ -8,7 +8,6 @@ import { handleClass } from './handlers/classHandler';
 import { handleImage, isImage } from './handlers/imageHandler';
 import { handleZip } from './compress/zipHandler';
 import { handleRar } from './compress/rarHandler';
-import { workspace } from 'vscode';
 import { handleCommonEvent } from './compress/commonHandler';
 
 /**

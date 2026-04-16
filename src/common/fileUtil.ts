@@ -47,17 +47,14 @@ export class FileUtil {
         this.context = context;
     }
     public static getLastPath(key: string | string[], path = '') {
-        // 获取已经保存的路径
         let basePath: string;
         if (!Array.isArray(key)) { key = [key] }
         for (const itemKey of key) {
             basePath = this.context.globalState.get(itemKey + 'SelectorPath');
             if (basePath) break;
         }
-        if (basePath && !existsSync(basePath)) {
+        if (!basePath || !existsSync(basePath)) {
             basePath = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath ?? ''
-        } else {
-            basePath = '';
         }
         return vscode.Uri.file(basePath + path)
     }
