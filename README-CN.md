@@ -48,12 +48,6 @@
 - PDF: 支持直接预览pdf文件
 - HTTP: 用于发送http请求, 由于REST Client本地请求有bug, 修改后进行集成.
 
-## Sponsor
-
-[![Database Client](https://database-client.com/text_logo.png)](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2)
-
-适用于Visual Studio Code的数据库客户端, 支持**MySQL/MariaDB, PostgreSQL, SQLite, Redis**以及**ElasticSearch**等数据库的管理, 且可作为一个SSH客户端, 极大地提升您的生产力! [立刻安装](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2).
-
 ## Credits
 
 - PDF rendering: [mozilla/pdf.js/](https://github.com/mozilla/pdf.js/)

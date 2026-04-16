@@ -48,12 +48,6 @@ Tips:
 
 The html editor supports live viewing.   Press ctrl+shift+v to open the live view.
 
-## Sponsor
-
-[![Database Client](https://database-client.com/text_logo.png)](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2)
-
-Database Client for Visual Studio Code, supporting the management **MySQL/MariaDB, PostgreSQL, SQLite, Redis** and  **ElasticSearch**, and works as an **SSH** client, boost your maximum productivity! [Get it now](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-database-client2).
-
 ## Credits
 
 - PDF rendering: [mozilla/pdf.js/](https://github.com/mozilla/pdf.js/)
