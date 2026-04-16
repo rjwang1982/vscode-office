@@ -5,6 +5,11 @@ src/**
 packages/**
 template/**
 .gitignore
+.gitmodules
+.cursorrules
+.eslintrc.js
+.eslintrc_react.cjs
+.github/**
 vsc-extension-quickstart.md
 **/tsconfig.json
 **/.eslintrc.json
@@ -16,4 +21,5 @@ build.js
 public/
 lib.js
 backlog.md
+index.html
 yarn.lock

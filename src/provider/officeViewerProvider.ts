@@ -5,7 +5,7 @@ import * as vscode from 'vscode';
 import { Handler } from '../common/handler';
 import { Util } from '../common/util';
 import { handleClass } from './handlers/classHandler';
-import { handleImage, isImage } from './handlers/imageHanlder';
+import { handleImage, isImage } from './handlers/imageHandler';
 import { handleZip } from './compress/zipHandler';
 import { handleRar } from './compress/rarHandler';
 import { workspace } from 'vscode';
