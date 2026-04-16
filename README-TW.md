@@ -2,6 +2,14 @@
 
 > Fork 自 [cweijan/vscode-office](https://github.com/cweijan/vscode-office)，由 [RJ.Wang](mailto:wangrenjun@gmail.com) 維護。
 
+## 本 Fork 的改進
+
+- Mermaid 從 v8.8.0 升級到 v11.14.0，新版圖表語法不再報錯
+- Mermaid 改為本地載入，不依賴 CDN，離線也能用
+- 用輕量內建插件替換了已停更的 `markdown-it-mermaid`
+- Mermaid 圖表和文件內容預設靠左顯示（不再置中）
+- 清理無用程式碼，修復多處拼寫錯誤
+
 ## 介紹
 
 本擴充功能支援在VS Code中預覽以下常見的辦公檔案格式：

@@ -2,6 +2,14 @@
 
 > Forked from [cweijan/vscode-office](https://github.com/cweijan/vscode-office), maintained by [RJ.Wang](mailto:wangrenjun@gmail.com).
 
+## What's improved in this fork
+
+- Mermaid upgraded from v8.8.0 to v11.14.0 — new diagram syntax now renders correctly
+- Mermaid loaded locally instead of CDN, better offline support
+- Replaced deprecated `markdown-it-mermaid` with a lightweight built-in plugin
+- Mermaid diagrams and document content aligned to left (instead of center)
+- Removed dead code and fixed typos across the codebase
+
 ## Introduction
 
 English | [简体中文](README-CN.md) | [繁體中文](README-TW.md)
