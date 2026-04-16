@@ -2,7 +2,7 @@
 	"name": "vscode-office-enhanced",
 	"displayName": "Office Viewer Enhanced",
 	"description": "View word, excel, pdf, markdown and more in VS Code. Fork with upgraded Mermaid v11 support.",
-	"version": "3.5.5",
+	"version": "3.5.6",
 	"publisher": "rjwang",
 	"icon": "images/logo.png",
 	"engines": {
