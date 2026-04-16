@@ -39,8 +39,9 @@
 }
 ```
 
-- 在編輯器開啟右鍵選單可將markdown匯出為pdf, docx或者html, pdf依賴於chromium, 可透過 `vscode-office.chromiumPath`配置chromium瀏覽器路徑.
-  ![1685418034035](image/README-CN/1685418034035.png)
+在編輯器開啟右鍵選單可將markdown匯出為pdf, docx或者html, pdf依賴於chromium, 可透過 `vscode-office.chromiumPath` 配置chromium瀏覽器路徑.
+
+![Markdown 編輯器截圖](image/README-CN/screenshot.png)
 
 快捷鍵: 基於[Vditor快捷鍵](shortcut.md)以及更多:
 

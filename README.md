@@ -41,6 +41,10 @@ If you want to use the original vscode editor, insert this in your `settings.jso
 }
 ```
 
+Right-click in the editor to export markdown to PDF, DOCX or HTML. PDF export requires Chromium, configurable via `vscode-office.chromiumPath`.
+
+![Markdown Editor Screenshot](image/README-CN/screenshot.png)
+
 Shortcuts: Base on [Vditor shortcuts](shortcut.md) and more:
 
 - Move list up: `Ctrl Alt I` / `⌘ ^ I`
