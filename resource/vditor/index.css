@@ -35,3 +35,8 @@ a {
 html {
     scrollbar-color: unset;
 }
+
+/* Mermaid 图表默认靠左显示 */
+.vditor-reset .language-mermaid {
+    text-align: left !important;
+}
