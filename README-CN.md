@@ -27,7 +27,7 @@
 
 ## 介绍
 
-[English](README.md) | 简体中文 | [繁體中文](README-TW.md)
+[English](README.md) | 简体中文
 
 本扩展支持在 VS Code 中预览以下文件类型：
 

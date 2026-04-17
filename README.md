@@ -27,7 +27,7 @@ This extension is a maintained fork of the original project, with improvements f
 
 ## Introduction
 
-English | [简体中文](README-CN.md) | [繁體中文](README-TW.md)
+English | [简体中文](README-CN.md)
 
 This extension supports previewing the following file types in VS Code:
 
