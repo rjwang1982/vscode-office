@@ -50,7 +50,7 @@ export class MarkdownService {
             // chromium path
             "executablePath": this.getChromiumPath(),
             // Set `true` to convert `\n` in paragraphs into `<br>`.
-            "breaks": false,
+            "breaks": true,
             // pdf print option
             "printBackground": true,
             format: "A4",

@@ -4,8 +4,8 @@
  *--------------------------------------------------------------------------------------------*/
 
 body {
-	font-family:   "HelveticaNeue-Light", sans-serif, "宋体","Segoe WPC", "Segoe UI", "SFUIText-Light","Droid Sans Fallback";
-	font-size: 18px;
+	font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Noto Sans SC", "Helvetica Neue", "Helvetica", "Arial", "Microsoft YaHei", sans-serif;
+	font-size: 15px;
 	padding: 0 12px;
 	line-height: 1.6;
 	word-wrap: break-word;
@@ -14,7 +14,7 @@ body {
 
 .content-wrapper{
 	max-width: 860px;
-    margin: 0 auto;
+    margin: 0;
     padding: 0 30px;
 }
 
@@ -120,13 +120,13 @@ h1 {
 
 h2{
 	padding-bottom: .3em;
-    font-size: 2em;
+    font-size: 1.5em;
     line-height: 1.225;
     border-bottom: 1px solid #eee;
 }
 
 h3{
-	font-size: 1.75em;
+	font-size: 1.25em;
     line-height: 1.225;
 }
 

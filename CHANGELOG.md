@@ -1,5 +1,10 @@
 # Change log
 
+# 3.6.1 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Fix HTML export: enable line breaks so single newlines render as `<br>`.
+- Fix HTML export: adjust heading sizes and font to match Vditor editor style.
+- Align exported HTML content to left instead of center.
+
 # 3.6.0 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Remove bundled Icon Theme and Java Decompiler to reduce package size (~4.4 MB saved).
 - Keep the extension focused on office file viewing and markdown editing.
