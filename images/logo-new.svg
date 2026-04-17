@@ -1,0 +1,106 @@
+<!--
+  Office Viewer Enhanced Logo
+  作者: RJ.Wang (wangrenjun@gmail.com)
+  创建时间: 2026-04-17
+  风格：打开的文件夹 + "E" 字母 + 右下文档图标，绿色系
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <!-- 文件夹后面板渐变 -->
+    <linearGradient id="folderBack" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ea44f"/>
+      <stop offset="100%" style="stop-color:#22863a"/>
+    </linearGradient>
+    <!-- 文件夹前面板渐变 -->
+    <linearGradient id="folderFront" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2ea44f"/>
+      <stop offset="100%" style="stop-color:#34d058"/>
+    </linearGradient>
+    <!-- 文件夹标签渐变 -->
+    <linearGradient id="folderTab" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3cdf6a"/>
+      <stop offset="100%" style="stop-color:#2ea44f"/>
+    </linearGradient>
+    <!-- 文档图标渐变 -->
+    <linearGradient id="docGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#85e89d"/>
+      <stop offset="100%" style="stop-color:#34d058"/>
+    </linearGradient>
+    <!-- 阴影 -->
+    <filter id="shadow1" x="-8%" y="-8%" width="120%" height="125%">
+      <feDropShadow dx="2" dy="6" stdDeviation="10" flood-color="#0a3d1a" flood-opacity="0.22"/>
+    </filter>
+    <filter id="shadow2" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="1" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <!-- === 打开的文件夹 === -->
+  <g filter="url(#shadow1)">
+    <!-- 文件夹后面板（竖立的部分） -->
+    <path d="
+      M 55,70
+      L 55,400
+      Q 55,420 75,420
+      L 305,420
+      Q 325,420 325,400
+      L 325,70
+      Q 325,50 305,50
+      L 180,50
+      L 160,30
+      Q 150,20 135,20
+      L 75,20
+      Q 55,20 55,40
+      Z
+    " fill="url(#folderBack)"/>
+
+    <!-- 文件夹标签（顶部凸起） -->
+    <path d="
+      M 55,40
+      Q 55,20 75,20
+      L 135,20
+      Q 150,20 160,30
+      L 185,55
+      L 55,55
+      Z
+    " fill="url(#folderTab)"/>
+
+    <!-- 文件夹内露出的文件（白色纸张） -->
+    <rect x="85" y="80" width="210" height="300" rx="10" fill="white" opacity="0.35"/>
+    <rect x="95" y="90" width="190" height="280" rx="8" fill="white" opacity="0.55"/>
+
+    <!-- 文件夹前面板（略微打开，有透视感） -->
+    <path d="
+      M 45,180
+      Q 42,165 58,160
+      L 310,110
+      Q 328,106 332,122
+      L 345,400
+      Q 347,418 330,420
+      L 70,420
+      Q 52,420 50,402
+      Z
+    " fill="url(#folderFront)" opacity="0.92"/>
+  </g>
+
+  <!-- 白色 "E" 字母（在文件夹前面板上） -->
+  <text x="190" y="330" font-family="'Segoe UI', 'SF Pro Display', Arial, Helvetica, sans-serif"
+        font-size="200" font-weight="800" fill="white"
+        text-anchor="middle" dominant-baseline="central"
+        opacity="0.95">E</text>
+
+  <!-- === 右下角文档图标 === -->
+  <g filter="url(#shadow2)">
+    <!-- 文档背景 -->
+    <rect x="290" y="250" width="185" height="225" rx="22" ry="22" fill="url(#docGrad)"/>
+    <!-- 文档白色内页 -->
+    <rect x="310" y="275" width="145" height="180" rx="10" ry="10" fill="white" opacity="0.88"/>
+    <!-- 折角效果 -->
+    <path d="M 415,275 L 455,275 Q 455,275 455,285 L 455,315 L 425,275 Z" fill="#b5f5c8" opacity="0.6"/>
+    <!-- 文档横线 -->
+    <rect x="325" y="310" width="100" height="10" rx="5" fill="#34d058" opacity="0.45"/>
+    <rect x="325" y="335" width="80" height="10" rx="5" fill="#34d058" opacity="0.45"/>
+    <rect x="325" y="360" width="95" height="10" rx="5" fill="#34d058" opacity="0.45"/>
+    <rect x="325" y="385" width="65" height="10" rx="5" fill="#34d058" opacity="0.4"/>
+  </g>
+</svg>
