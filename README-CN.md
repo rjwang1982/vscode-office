@@ -5,6 +5,7 @@
 ## 本 Fork 的改进
 
 - **HTML 导出图片内嵌** — 导出 HTML 时自动将本地图片转为 Base64 嵌入，生成的 `.html` 文件完全独立，发给别人直接打开即可看到所有图片
+- **更小的安装包** — 移除了内置的 Icon Theme 和 Java 反编译器（节省约 4.4 MB），让扩展更专注于办公文件预览
 - Mermaid 从 v8.8.0 升级到 v11.14.0，新版图表语法不再报错
 - Mermaid 改为本地加载，不依赖 CDN，离线也能用
 - 用轻量内置插件替换了已停更的 `markdown-it-mermaid`
@@ -54,7 +55,6 @@
 
 ## 其他功能
 
-- 图标主题: 内置了Material Icon Theme部分icon
 - Excel: 支持对xlsx, csv等excel文件进行预览和保存(注意xlsx保存会丢失格式, csv则不支持gbk中文)
 - HTML: 编辑HTML的过程中按下ctrl+shift+v可实时预览.
 - PDF: 支持直接预览pdf文件
@@ -70,4 +70,3 @@
 - HTTP: [Rest  Client](https://github.com/Huachao/vscode-restclient)
 - Markdown: [Vanessa219/vditor](https://github.com/Vanessa219/vditor)
 - Mermaid 图表: [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid)
-- Material Icon theme: [PKief/vscode-material-icon-theme](https://github.com/PKief/vscode-material-icon-theme)

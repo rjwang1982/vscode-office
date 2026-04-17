@@ -5,6 +5,7 @@
 ## What's improved in this fork
 
 - **HTML export with embedded images** — Local images are automatically converted to Base64 and embedded in the exported HTML file. Share a single `.html` file with anyone, all images display correctly without external dependencies
+- **Smaller package size** — Removed bundled Icon Theme and Java Decompiler (~4.4 MB saved), keeping the extension focused on office file viewing
 - Mermaid upgraded from v8.8.0 to v11.14.0 — new diagram syntax now renders correctly
 - Mermaid loaded locally instead of CDN, better offline support
 - Replaced deprecated `markdown-it-mermaid` with a lightweight built-in plugin
@@ -73,4 +74,3 @@ The html editor supports live viewing.   Press ctrl+shift+v to open the live vie
 - HTTP: [Rest  Client](https://github.com/Huachao/vscode-restclient)
 - Markdown: [Vanessa219/vditor](https://github.com/Vanessa219/vditor)
 - Mermaid diagrams: [mermaid-js/mermaid](https://github.com/mermaid-js/mermaid)
-- Material Icon theme: [PKief/vscode-material-icon-theme](https://github.com/PKief/vscode-material-icon-theme)

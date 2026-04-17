@@ -1,5 +1,9 @@
 # Change log
 
+# 3.6.0 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Remove bundled Icon Theme and Java Decompiler to reduce package size (~4.4 MB saved).
+- Keep the extension focused on office file viewing and markdown editing.
+
 # 3.5.9 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Fix Changelog not showing on VS Code Marketplace.
 - Update Marketplace description to highlight Kiro support and HTML embedded images feature.
