@@ -1,5 +1,11 @@
 # Change log
 
+# 3.6.2 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- New green-themed logo (folder + "E" + document icon), replacing the original blue logo.
+- Update extension description for clarity.
+- Remove Traditional Chinese README (README-TW.md) and clean up references.
+- Switch prepublish script from yarn to npm.
+
 # 3.6.1 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Fix HTML export: enable line breaks so single newlines render as `<br>`.
 - Fix HTML export: adjust heading sizes and font to match Vditor editor style.
