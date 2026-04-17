@@ -1,5 +1,9 @@
 # Change log
 
+# 3.5.9 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Fix Changelog not showing on VS Code Marketplace.
+- Update Marketplace description to highlight Kiro support and HTML embedded images feature.
+
 # 3.5.7 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - **New: HTML export with embedded images** — Local images are automatically converted to Base64 and embedded in the exported HTML. The file is fully self-contained and can be shared without losing any images.
 
