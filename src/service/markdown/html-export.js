@@ -5,7 +5,72 @@ const URI = require("vscode").Uri
 const { createOutline } = require("./outline")
 const isDev = process.argv.indexOf('--type=extensionHost') >= 0;
 
-export async function exportHtml(exportFilePath, data) {
+/**
+ * 获取图片的 MIME 类型
+ */
+function getMimeType(filePath) {
+    const ext = path.extname(filePath).toLowerCase();
+    const mimeTypes = {
+        '.png': 'image/png',
+        '.jpg': 'image/jpeg',
+        '.jpeg': 'image/jpeg',
+        '.gif': 'image/gif',
+        '.svg': 'image/svg+xml',
+        '.webp': 'image/webp',
+        '.bmp': 'image/bmp',
+        '.ico': 'image/x-icon',
+    };
+    return mimeTypes[ext] || 'image/png';
+}
+
+/**
+ * 将 HTML 中的本地图片转换为 Base64 内嵌格式
+ * @author RJ.Wang
+ * @date 2026-04-17
+ */
+function embedLocalImages(html, basePath) {
+    const $ = require("cheerio").load(html);
+    $("img").each(function () {
+        let src = $(this).attr("src");
+        if (!src) return;
+
+        // 跳过已经是 base64 或远程 URL 的图片
+        if (src.startsWith("data:") || src.startsWith("http://") || src.startsWith("https://")) return;
+
+        // 处理 file:// 协议
+        let imgPath = src;
+        if (imgPath.startsWith("file:///")) {
+            imgPath = imgPath.replace("file:///", "/");
+        } else if (imgPath.startsWith("file://")) {
+            imgPath = imgPath.replace("file://", "");
+        }
+
+        // 相对路径转绝对路径
+        if (!path.isAbsolute(imgPath)) {
+            imgPath = path.resolve(basePath, imgPath);
+        }
+
+        // 解码 URL 编码
+        imgPath = decodeURIComponent(imgPath);
+
+        try {
+            if (fs.existsSync(imgPath)) {
+                const imageBuffer = fs.readFileSync(imgPath);
+                const base64 = imageBuffer.toString("base64");
+                const mime = getMimeType(imgPath);
+                $(this).attr("src", `data:${mime};base64,${base64}`);
+            }
+        } catch (e) {
+            console.warn("Failed to embed image: " + imgPath, e.message);
+        }
+    });
+    return $.html();
+}
+
+export async function exportHtml(exportFilePath, data, basePath) {
+    if (basePath) {
+        data = embedLocalImages(data, basePath);
+    }
     console.log("[pretty-md-pdf] Exported to file: " + exportFilePath)
     fs.writeFileSync(exportFilePath, data, "utf-8")
 }
@@ -28,7 +93,7 @@ export async function exportByType(filePath, data, type, config) {
 
     // export html
     if (type == "html") {
-        exportHtml(targetFilePath, data)
+        exportHtml(targetFilePath, data, originPath.dir)
         return
     } else if (type == "docx") {
         return exportDocx(targetFilePath, data)
