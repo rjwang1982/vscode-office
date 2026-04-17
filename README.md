@@ -4,6 +4,7 @@
 
 ## What's improved in this fork
 
+- **HTML export with embedded images** — Local images are automatically converted to Base64 and embedded in the exported HTML file. Share a single `.html` file with anyone, all images display correctly without external dependencies
 - Mermaid upgraded from v8.8.0 to v11.14.0 — new diagram syntax now renders correctly
 - Mermaid loaded locally instead of CDN, better offline support
 - Replaced deprecated `markdown-it-mermaid` with a lightweight built-in plugin
@@ -42,6 +43,8 @@ If you want to use the original vscode editor, insert this in your `settings.jso
 ```
 
 Right-click in the editor to export markdown to PDF, DOCX or HTML. PDF export requires Chromium, configurable via `vscode-office.chromiumPath`.
+
+When exporting to HTML, all local images are automatically embedded as Base64 — the exported file is fully self-contained and can be shared directly without losing any images.
 
 ![Markdown Editor Screenshot](image/README-CN/screenshot.png)
 

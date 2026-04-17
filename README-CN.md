@@ -4,6 +4,7 @@
 
 ## 本 Fork 的改进
 
+- **HTML 导出图片内嵌** — 导出 HTML 时自动将本地图片转为 Base64 嵌入，生成的 `.html` 文件完全独立，发给别人直接打开即可看到所有图片
 - Mermaid 从 v8.8.0 升级到 v11.14.0，新版图表语法不再报错
 - Mermaid 改为本地加载，不依赖 CDN，离线也能用
 - 用轻量内置插件替换了已停更的 `markdown-it-mermaid`
@@ -40,6 +41,8 @@
 ```
 
 在编辑器打开右键菜单可将markdown导出为pdf, docx或者html, pdf依赖于chromium, 可通过 `vscode-office.chromiumPath` 配置chromium浏览器路径.
+
+导出 HTML 时，所有本地图片会自动转换为 Base64 内嵌到文件中。导出的 `.html` 文件完全独立，直接发给别人打开即可正常显示所有图片，无需附带图片文件。
 
 ![Markdown 编辑器截图](image/README-CN/screenshot.png)
 

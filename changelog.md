@@ -1,5 +1,8 @@
 # Change log
 
+# 3.5.7 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- **New: HTML export with embedded images** — Local images are automatically converted to Base64 and embedded in the exported HTML. The file is fully self-contained and can be shared without losing any images.
+
 # 3.5.5 2026-4-16 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Upgrade Mermaid from v8.8.0 to v11.14.0, fixing syntax errors with newer Mermaid diagrams.
 - Replace deprecated `markdown-it-mermaid` package with a lightweight built-in plugin.
