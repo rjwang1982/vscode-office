@@ -41,7 +41,11 @@ html {
     text-align: left !important;
 }
 
-/* 文档内容靠左显示 */
+/* 文档内容靠左显示，铺满可用空间 */
 .vditor-preview > .vditor-reset {
     margin: 0 !important;
+    max-width: none !important;
+    padding: 10px 5% !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
 }

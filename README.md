@@ -22,6 +22,7 @@ This extension is a maintained fork of the original project, with improvements f
   - Mermaid is loaded locally instead of from a CDN for better offline support
   - Replaced the deprecated `markdown-it-mermaid` dependency with a lightweight built-in integration
 - **Cleaner rendering**
+  - Markdown preview now fills the available editor width instead of wrapping too early
   - Mermaid diagrams and document content are left-aligned instead of centered
   - Removed dead code and fixed typos across the codebase
 

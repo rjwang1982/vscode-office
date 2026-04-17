@@ -1,5 +1,8 @@
 # Change log
 
+# 3.6.3 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Fix markdown preview not filling available width (content wrapping too early).
+
 # 3.6.2 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - New green-themed logo (folder + "E" + document icon), replacing the original blue logo.
 - Update extension description for clarity.
