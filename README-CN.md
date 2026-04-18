@@ -78,6 +78,13 @@
 
 HTML 编辑器支持实时预览。按 `Ctrl+Shift+V` 即可打开实时视图。
 
+## 致谢
+
+本项目的诞生离不开以下作者的工作：
+
+- **[cweijan](https://github.com/cweijan)** — 原始项目 [vscode-office](https://github.com/cweijan/vscode-office) 的作者，本 Fork 基于其工作构建。同时维护了一个专为该扩展适配的 [Vditor 定制版本](https://github.com/vscode-ext-studio/vditor)。
+- **[Vanessa219（Liyuan Li）](https://github.com/Vanessa219)** — [Vditor](https://github.com/Vanessa219/vditor) 的作者，本扩展 Markdown 所见即所得编辑能力的核心引擎。该项目由 [B3log](https://b3log.org) 开源社区开发，采用 MIT 协议。
+
 ## Credits
 
 - PDF rendering: [mozilla/pdf.js/](https://github.com/mozilla/pdf.js/)

@@ -78,6 +78,13 @@ Tips:
 
 The HTML editor supports live preview. Press `Ctrl+Shift+V` to open the live view.
 
+## Acknowledgements
+
+This project would not exist without the work of the following authors:
+
+- **[cweijan](https://github.com/cweijan)** — Author of the original [vscode-office](https://github.com/cweijan/vscode-office) extension, which this fork is based on. Also maintains a [customized Vditor build](https://github.com/vscode-ext-studio/vditor) tailored for the extension.
+- **[Vanessa219 (Liyuan Li)](https://github.com/Vanessa219)** — Author of [Vditor](https://github.com/Vanessa219/vditor), the browser-based Markdown WYSIWYG editor at the heart of this extension's Markdown editing experience. Developed under the [B3log](https://b3log.org) open-source community, licensed under MIT.
+
 ## Credits
 
 - PDF rendering: [mozilla/pdf.js/](https://github.com/mozilla/pdf.js/)
