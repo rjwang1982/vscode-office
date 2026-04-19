@@ -362,6 +362,21 @@
 					"default": 25,
 					"description": "Printed pdf default top margin."
 				},
+				"vscode-office.editorMode": {
+					"type": "string",
+					"enum": [
+						"wysiwyg",
+						"sv",
+						"ir"
+					],
+					"enumDescriptions": [
+						"What You See Is What You Get (WYSIWYG editing)",
+						"Split View (edit on left, preview on right)",
+						"Instant Rendering (inline preview while editing)"
+					],
+					"default": "wysiwyg",
+					"description": "Default editing mode for the Markdown editor."
+				},
 				"vscode-office.openOutline": {
 					"type": "boolean",
 					"default": true,

@@ -35,7 +35,7 @@ handler.on("open", async (md) => {
     cache: {
       enable: false,
     },
-    mode: 'wysiwyg',
+    mode: config.editorMode || 'wysiwyg',
     lang: language == 'zh-cn' ? 'zh_CN' : config.editorLanguage,
     icon: "material",
     tab: '\t',

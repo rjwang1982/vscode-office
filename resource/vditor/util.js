@@ -115,7 +115,8 @@ export async function getToolbar(resPath) {
             }
         },
         "|",
-        // "edit-mode",  // 屏蔽掉, 现版本都是针对一种模式优化
+        "|",
+        "edit-mode",
         "code-theme",
         // "|",
         "list",
