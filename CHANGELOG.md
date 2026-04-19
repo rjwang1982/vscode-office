@@ -1,5 +1,11 @@
 # Change log
 
+# 3.6.4 2026-4-19 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- New: Add configurable Markdown editor mode (`vscode-office.editorMode`), supporting `wysiwyg`, `ir`, `sv`, and `preview` (read-only) modes.
+- New: Restore the "Toggle Edit Mode" button in the Markdown toolbar for runtime mode switching.
+- Add acknowledgements section for upstream authors (cweijan and Vanessa219) in README and README-CN.
+- Fix CSS selector for preview button that prevented auto-preview mode from working.
+
 # 3.6.3 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Fix markdown preview not filling available width (content wrapping too early).
 
