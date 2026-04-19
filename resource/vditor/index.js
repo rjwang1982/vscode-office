@@ -84,7 +84,7 @@ handler.on("open", async (md) => {
       onToolbarClick(editor)
       // 如果配置为预览模式，自动点击预览按钮进入只读预览
       if (config.editorMode === 'preview') {
-        const previewBtn = document.querySelector('.vditor-toolbar [data-type="preview"] button');
+        const previewBtn = document.querySelector('.vditor-toolbar button[data-type="preview"]');
         if (previewBtn) previewBtn.click();
       }
     }
