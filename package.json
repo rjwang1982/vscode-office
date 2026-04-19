@@ -366,13 +366,15 @@
 					"type": "string",
 					"enum": [
 						"wysiwyg",
+						"ir",
 						"sv",
-						"ir"
+						"preview"
 					],
 					"enumDescriptions": [
 						"What You See Is What You Get (WYSIWYG editing)",
+						"Instant Rendering (inline preview while editing)",
 						"Split View (edit on left, preview on right)",
-						"Instant Rendering (inline preview while editing)"
+						"Read-only preview (click the preview button to edit)"
 					],
 					"default": "wysiwyg",
 					"description": "Default editing mode for the Markdown editor."
