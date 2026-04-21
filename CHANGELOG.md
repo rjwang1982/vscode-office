@@ -1,5 +1,9 @@
 # Change log
 
+# 3.6.5 2026-4-21 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Fix Mermaid rendering in Vditor editor: replace deprecated `mermaid.init()` API with `mermaid.run()` for full compatibility with Mermaid v11 chart types (xychart, quadrantChart, timeline, etc.).
+- Rebuild Vditor from source with the updated Mermaid integration.
+
 # 3.6.4 2026-4-19 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - New: Add configurable Markdown editor mode (`vscode-office.editorMode`), supporting `wysiwyg`, `ir`, `sv`, and `preview` (read-only) modes.
 - New: Restore the "Toggle Edit Mode" button in the Markdown toolbar for runtime mode switching.
