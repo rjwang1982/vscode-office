@@ -74,7 +74,25 @@ handler.on("open", async (md) => {
       }
     },
     hint: {
-      emoji: {},
+      emoji: {
+        // Unicode 12.0+ geometric emoji missing from Lute's built-in dict
+        "orange_circle": "🟠",
+        "yellow_circle": "🟡",
+        "green_circle": "🟢",
+        "purple_circle": "🟣",
+        "brown_circle": "🟤",
+        "red_square": "🟥",
+        "blue_square": "🟦",
+        "orange_square": "🟧",
+        "yellow_square": "🟨",
+        "green_square": "🟩",
+        "purple_square": "🟪",
+        "brown_square": "🟫",
+        "white_large_square": "⬜",
+        "black_large_square": "⬛",
+        "speech_balloon": "💬",
+        "star": "⭐",
+      },
       extend: hotKeys
     }, after() {
       handler.on("update", content => {

@@ -1,5 +1,8 @@
 # Change log
 
+# 3.6.6 2026-4-22 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Fix Unicode 12.0+ geometric emoji (🟡🟢🟥⬜ etc.) not rendering in Vditor editor by injecting missing emoji mappings into Lute's dictionary via PutEmojis.
+
 # 3.6.5 2026-4-21 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Fix Mermaid rendering in Vditor editor: replace deprecated `mermaid.init()` API with `mermaid.run()` for full compatibility with Mermaid v11 chart types (xychart, quadrantChart, timeline, etc.).
 - Rebuild Vditor from source with the updated Mermaid integration.
