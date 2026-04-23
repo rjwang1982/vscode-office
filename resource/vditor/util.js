@@ -72,6 +72,15 @@ export async function getToolbar(resPath) {
         "|",
         {
             tipPosition: 's',
+            tip: 'Reload file from disk',
+            className: 'right',
+            icon: await loadRes(`${resPath}/icon/refresh.svg`),
+            click() {
+                handler.emit("reload")
+            }
+        },
+        {
+            tipPosition: 's',
             tip: `Edit In VSCode (${shortcutTip})`,
             className: 'right',
             icon: await loadRes(`${resPath}/icon/vscode.svg`),

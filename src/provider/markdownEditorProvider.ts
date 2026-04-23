@@ -10,7 +10,10 @@ import { Global } from '@/common/global';
 import { platform } from 'os';
 
 /**
- * support view and edit office files.
+ * Markdown editor provider using Vditor as the editing engine.
+ *
+ * @author cweijan (original), RJ.Wang (fork maintainer)
+ * @updated 2026-04-23
  */
 export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
 
@@ -33,7 +36,6 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
     }
 
     resolveCustomTextEditor(document: vscode.TextDocument, webviewPanel: vscode.WebviewPanel, token: vscode.CancellationToken): void | Thenable<void> {
-        // console.log('schema', document.uri.scheme);
         const uri = document.uri;
         const webview = webviewPanel.webview;
         const folderPath = vscode.Uri.joinPath(uri, '..')
@@ -68,14 +70,26 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
 
         let lastManualSaveTime: number;
         const config = vscode.workspace.getConfiguration("vscode-office");
+
+        /** Build the payload for the "open" event sent to the WebView. */
+        const buildOpenPayload = () => ({
+            title: basename(uri.fsPath),
+            config,
+            scrollTop: this.state.get(`scrollTop_${document.uri.fsPath}`, 0),
+            language: vscode.env.language,
+            rootPath, content
+        });
+
+        /** Read file from disk and update internal state. */
+        const reloadFromDisk = (): string => {
+            const fileContent = readFileSync(uri.fsPath, 'utf8').replace(/\r/g, '');
+            content = fileContent;
+            this.updateCount(content);
+            return fileContent;
+        };
+
         handler.on("init", () => {
-            const scrollTop = this.state.get(`scrollTop_${document.uri.fsPath}`, 0);
-            handler.emit("open", {
-                title: basename(uri.fsPath),
-                config, scrollTop,
-                language: vscode.env.language,
-                rootPath, content
-            })
+            handler.emit("open", buildOpenPayload())
             this.updateCount(content)
             this.countStatus.show()
         }).on("externalUpdate", e => {
@@ -85,6 +99,17 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
             content = updatedText;
             this.updateCount(content)
             handler.emit("update", updatedText)
+        }).on("fileChange", () => {
+            if (lastManualSaveTime && Date.now() - lastManualSaveTime < 800) return;
+            const prev = content;
+            reloadFromDisk();
+            if (content !== prev) {
+                handler.emit("update", content)
+            }
+        }).on("reload", async () => {
+            reloadFromDisk();
+            await this.updateTextDocument(document, content);
+            handler.emit("open", buildOpenPayload())
         }).on("command", (command) => {
             vscode.commands.executeCommand(command)
         }).on("openLink", (uri: string) => {
