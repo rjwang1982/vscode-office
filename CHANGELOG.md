@@ -1,5 +1,9 @@
 # Change log
 
+# 3.6.7 2026-4-23 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Add reload button in Markdown toolbar to refresh file content from disk, works in both editing and preview modes.
+- Refactor event handlers in markdownEditorProvider: extract shared helpers, reduce code duplication.
+
 # 3.6.6 2026-4-23 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Fix Unicode 12.0+ geometric emoji (🟡🟢🟥⬜ etc.) not rendering in Vditor editor by injecting missing emoji mappings into Lute's dictionary via PutEmojis.
 - Add reload button in Markdown toolbar to refresh file content from disk, works in both editing and preview modes.
