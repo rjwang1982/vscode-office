@@ -1,4 +1,4 @@
-import { adjustImgPath, getWorkspacePath, writeFile } from '@/common/fileUtil';
+import { adjustImgPath, getWorkspacePath } from '@/common/fileUtil';
 import { readFileSync, writeFileSync } from 'fs';
 import { basename, isAbsolute, parse, resolve } from 'path';
 import * as vscode from 'vscode';
@@ -27,12 +27,32 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
         this.state = context.globalState
     }
 
-    private getFolders(): vscode.Uri[] {
-        const data = [];
-        for (let i = 65; i <= 90; i++) {
-            data.push(vscode.Uri.file(`${String.fromCharCode(i)}:/`))
+    /**
+     * 构建 webview 允许访问的本地资源路径列表。
+     * 默认只开放扩展目录、文档所在目录和工作区目录。
+     * 当用户开启 viewAbsoluteLocal 时，才开放整个文件系统以支持绝对路径图片。
+     */
+    private getLocalResourceRoots(docFolder: vscode.Uri): vscode.Uri[] {
+        const roots: vscode.Uri[] = [
+            vscode.Uri.file(this.extensionPath),
+            docFolder,
+        ];
+        // 添加所有工作区目录
+        const folders = vscode.workspace.workspaceFolders;
+        if (folders) {
+            for (const folder of folders) {
+                roots.push(folder.uri);
+            }
         }
-        return data;
+        // 仅在用户明确开启绝对路径图片支持时，才开放整个文件系统
+        if (Global.getConfig<boolean>('viewAbsoluteLocal', false)) {
+            roots.push(vscode.Uri.file('/'));
+            // Windows 盘符 A-Z
+            for (let i = 65; i <= 90; i++) {
+                roots.push(vscode.Uri.file(`${String.fromCharCode(i)}:/`));
+            }
+        }
+        return roots;
     }
 
     resolveCustomTextEditor(document: vscode.TextDocument, webviewPanel: vscode.WebviewPanel, token: vscode.CancellationToken): void | Thenable<void> {
@@ -41,7 +61,7 @@ export class MarkdownEditorProvider implements vscode.CustomTextEditorProvider {
         const folderPath = vscode.Uri.joinPath(uri, '..')
         webview.options = {
             enableScripts: true,
-            localResourceRoots: [vscode.Uri.file("/"), ...this.getFolders()]
+            localResourceRoots: this.getLocalResourceRoots(folderPath)
         }
         const handler = Handler.bind(webviewPanel, uri);
         this.handleMarkdown(document, handler, folderPath)

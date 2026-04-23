@@ -1,22 +1,26 @@
 # Change log
 
-# 3.6.7 2026-4-23 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
-- Add reload button in Markdown toolbar to refresh file content from disk, works in both editing and preview modes.
+# 3.7.1 2026-4-23 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Fix Mermaid rendering: rebuild Vditor from source with `mermaid.run()` API, fixing chart cross-contamination in both editing and preview modes.
+- Fix Unicode 12.0+ geometric emoji (🟡🟢🟥⬜ etc.) not rendering in Vditor editor by injecting missing emoji mappings into Lute's dictionary.
+- Add configurable Markdown editor mode (`vscode-office.editorMode`): wysiwyg, ir, sv.
+- Add reload button in Markdown toolbar to refresh file content from disk.
+- Restore "Toggle Edit Mode" button in toolbar for runtime mode switching.
+- Add acknowledgements for upstream authors (cweijan & Vanessa219) in README and README-CN.
 - Refactor event handlers in markdownEditorProvider: extract shared helpers, reduce code duplication.
+- Clean up unused imports and duplicate toolbar separators.
 
-# 3.6.6 2026-4-23 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
-- Fix Unicode 12.0+ geometric emoji (🟡🟢🟥⬜ etc.) not rendering in Vditor editor by injecting missing emoji mappings into Lute's dictionary via PutEmojis.
-- Add reload button in Markdown toolbar to refresh file content from disk, works in both editing and preview modes.
-
-# 3.6.5 2026-4-21 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
-- Fix Mermaid rendering in Vditor editor: replace deprecated `mermaid.init()` API with `mermaid.run()` for full compatibility with Mermaid v11 chart types (xychart, quadrantChart, timeline, etc.).
-- Rebuild Vditor from source with the updated Mermaid integration.
-
-# 3.6.4 2026-4-19 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
-- New: Add configurable Markdown editor mode (`vscode-office.editorMode`), supporting `wysiwyg`, `ir`, `sv`, and `preview` (read-only) modes.
-- New: Restore the "Toggle Edit Mode" button in the Markdown toolbar for runtime mode switching.
-- Add acknowledgements section for upstream authors (cweijan and Vanessa219) in README and README-CN.
-- Fix CSS selector for preview button that prevented auto-preview mode from working.
+# 3.7.0 2026-4-23 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Refactor Markdown webview security: restrict localResourceRoots to extension, document and workspace directories by default; only open full filesystem when `viewAbsoluteLocal` is enabled.
+- Refactor build script: migrate to esbuild context API for watch mode, extract shared plugins, add error handling for missing dependencies.
+- Replace `axios` with Node.js built-in `http` module in dev mode, removing a runtime dependency.
+- Remove unused `readCSV` / `readXLSX` helpers from `excel_reader.ts`, consolidating on the unified `loadSheets` function.
+- Fix Zip viewer React state bug: move event handler registration into `useEffect` and use `useRef` to avoid stale closure over `info`.
+- Fix Excel viewer keydown listener leak: properly remove previous listener on re-render and clean up on unmount.
+- Improve Puppeteer error handling in HTML/PDF export: use try/catch with proper browser cleanup instead of swallowed `.catch()`.
+- Inline local `mermaid.min.js` in PDF export for offline support, with CDN fallback.
+- Add error handling to `keepOriginDiff()` to prevent silent activation failures.
+- Clean up dead code: remove commented-out `zoomElement` function and `getConfig` helper.
 
 # 3.6.3 2026-4-17 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Fix markdown preview not filling available width (content wrapping too early).

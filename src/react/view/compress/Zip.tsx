@@ -1,5 +1,5 @@
 import { Flex, Layout } from 'antd';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { handler } from '../../util/vscode';
 import FileItems from './components/FileItems';
 import Sidebar from './components/Sidebar';
@@ -13,7 +13,11 @@ export default function Zip() {
     const [extension, setExtension] = useState('')
     const [tableItems, setTableItems] = useState([] as FileInfo[])
     const [info, setInfo] = useState({ files: [] } as CompressInfo)
-    const changeFiles = (dirPath: string) => {
+    const infoRef = useRef(info)
+    infoRef.current = info
+
+    const changeFiles = useCallback((dirPath: string) => {
+        const current = infoRef.current
         setCurrentDir(dirPath)
         setTableItems(dirPath ? [
             {
@@ -21,28 +25,26 @@ export default function Zip() {
                 isDirectory: true,
                 entryName: dirPath.includes('/') ? dirPath.replace(/\/[^\/]+$/, '') : null,
             },
-            ...info.folderMap[dirPath].children
-        ] : info.files)
-    }
-    handler
-        .on('size', (size: string) => {
-            setSize(size)
-        })
-        .on('extension', (extension: string) => {
-            setExtension(extension)
-        })
-        .on('data', (info: CompressInfo) => {
-            console.log(info)
-            setInfo(info)
-            setTableItems(info.files)
-        })
-        .on('openDir', changeFiles)
+            ...current.folderMap[dirPath].children
+        ] : current.files)
+    }, [])
 
     useEffect(() => {
         handler
+            .on('size', (size: string) => {
+                setSize(size)
+            })
+            .on('extension', (ext: string) => {
+                setExtension(ext)
+            })
+            .on('data', (newInfo: CompressInfo) => {
+                setInfo(newInfo)
+                setTableItems(newInfo.files)
+            })
+            .on('openDir', changeFiles)
             .on('zipChange', () => handler.emit('init'))
             .emit('init')
-    }, [])
+    }, [changeFiles])
     return (
         <Flex gap="middle" wrap="wrap">
             <Layout >

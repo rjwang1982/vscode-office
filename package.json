@@ -2,7 +2,7 @@
 	"name": "vscode-office-enhanced",
 	"displayName": "Office Viewer Enhanced",
 	"description": "Preview Word, Excel, PDF, Markdown, and more in VS Code and Kiro. Export self-contained HTML with embedded images and render Mermaid v11 diagrams.",
-	"version": "3.6.7",
+	"version": "3.7.1",
 	"publisher": "rjwang",
 	"icon": "images/logo-new.png",
 	"engines": {
@@ -367,14 +367,12 @@
 					"enum": [
 						"wysiwyg",
 						"ir",
-						"sv",
-						"preview"
+						"sv"
 					],
 					"enumDescriptions": [
 						"What You See Is What You Get (WYSIWYG editing)",
 						"Instant Rendering (inline preview while editing)",
-						"Split View (edit on left, preview on right)",
-						"Read-only preview (click the preview button to edit)"
+						"Split View (edit on left, preview on right)"
 					],
 					"default": "wysiwyg",
 					"description": "Default editing mode for the Markdown editor."
@@ -517,7 +515,6 @@
 		"@ant-design/icons": "^5.3.5",
 		"adm-zip": "^0.5.10",
 		"antd": "^5.15.4",
-		"axios": "^1.4.0",
 		"cheerio": "^1.0.0",
 		"chrome-finder": "^1.0.7",
 		"date-format": "^4.0.14",
@@ -538,7 +535,6 @@
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-image-gallery": "^1.3.0",
-		"udsv": "^0.5.3",
 		"vscode-html-to-docx": "^1.1.2",
 		"x-data-spreadsheet": "^1.1.9",
 		"xlsx": "^0.18.5"

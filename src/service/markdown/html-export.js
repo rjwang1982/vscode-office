@@ -106,15 +106,23 @@ export async function exportByType(filePath, data, type, config) {
     }
 
     const puppeteer = require("puppeteer-core")
-    let browser = await puppeteer.launch(options).catch(error => {
+    let browser;
+    try {
+        browser = await puppeteer.launch(options)
+    } catch (error) {
         showErrorMessage("puppeteer.launch()", error)
-    })
-    let page = await browser.newPage().catch(error => {
-        showErrorMessage("browser.newPage()", error)
-    });
-    await page.goto(URI.file(tmpfilename).toString(), { waitUntil: "networkidle0" }).catch(error => {
-        showErrorMessage("page.goto()", error)
-    });
+        throw new Error("Failed to launch browser: " + (error?.message || error))
+    }
+
+    let page;
+    try {
+        page = await browser.newPage()
+        await page.goto(URI.file(tmpfilename).toString(), { waitUntil: "networkidle0" })
+    } catch (error) {
+        showErrorMessage("browser page operation failed", error)
+        await browser.close().catch(() => {})
+        throw new Error("Failed to load page: " + (error?.message || error))
+    }
 
     // generate pdf
     if (type == "pdf") {
@@ -129,9 +137,14 @@ export async function exportByType(filePath, data, type, config) {
                 left: config["margin"]["left"]
             }
         }
-        const pdf = await page.pdf(options).catch(error => {
+        let pdf;
+        try {
+            pdf = await page.pdf(options)
+        } catch (error) {
             showErrorMessage("page.pdf", error)
-        })
+            await browser.close().catch(() => {})
+            throw new Error("Failed to generate PDF: " + (error?.message || error))
+        }
 
         const pdfBytes = await createOutline(pdf, data)
         fs.writeFileSync(targetFilePath, pdfBytes)

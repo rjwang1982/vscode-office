@@ -1,4 +1,4 @@
-"user strict";
+"use strict";
 import * as vscode from "vscode";
 
 export class Output {

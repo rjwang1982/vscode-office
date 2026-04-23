@@ -35,7 +35,7 @@ handler.on("open", async (md) => {
     cache: {
       enable: false,
     },
-    mode: (config.editorMode && config.editorMode !== 'preview') ? config.editorMode : 'wysiwyg',
+    mode: config.editorMode || 'wysiwyg',
     lang: language == 'zh-cn' ? 'zh_CN' : config.editorLanguage,
     icon: "material",
     tab: '\t',
@@ -100,11 +100,6 @@ handler.on("open", async (md) => {
       })
       openLink()
       onToolbarClick(editor)
-      // 如果配置为预览模式，自动点击预览按钮进入只读预览
-      if (config.editorMode === 'preview') {
-        const previewBtn = document.querySelector('.vditor-toolbar button[data-type="preview"]');
-        if (previewBtn) previewBtn.click();
-      }
     }
   })
   autoSymbol(handler, editor, config);

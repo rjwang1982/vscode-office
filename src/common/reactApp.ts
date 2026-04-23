@@ -1,4 +1,4 @@
-import axios from 'axios';
+import * as http from 'http';
 import * as fs from 'fs';
 import * as vscode from 'vscode';
 
@@ -27,7 +27,14 @@ export class ReactApp {
 
     private static async readContent(): Promise<string> {
         if (this.IS_DEV) {
-            const data: string = (await axios.get(`http://127.0.0.1:5739/index.html`, { transformResponse: [] })).data;
+            const data = await new Promise<string>((resolve, reject) => {
+                http.get('http://127.0.0.1:5739/index.html', (res) => {
+                    let body = '';
+                    res.on('data', (chunk) => body += chunk);
+                    res.on('end', () => resolve(body));
+                    res.on('error', reject);
+                }).on('error', reject);
+            });
             return data.replace('/@vite/client', 'http://127.0.0.1:5739/@vite/client')
         }
         const targetPath = `${this.webviewPath}/index.html`;

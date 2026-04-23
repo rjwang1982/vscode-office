@@ -10,6 +10,7 @@ import Spreadsheet from './x-spreadsheet/index';
 export default function Excel() {
     const [loading, setLoading] = useState(true)
     const isCSV = useRef<boolean>(false)
+    const keydownRef = useRef<((e: KeyboardEvent) => void) | null>(null)
     useEffect(() => {
         const container = document.getElementById('container');
 
@@ -21,7 +22,6 @@ export default function Excel() {
                 isCSV.current = ext?.match(/csv/i) !== null;
                 container.innerHTML = ''
                 const spreadSheet = new Spreadsheet(container, {
-                    // showToolbar: !ext?.match(/csv/i),
                     showToolbar: false,
                     row: {
                         len: maxLength + 50,
@@ -34,11 +34,17 @@ export default function Excel() {
                         height: () => window.innerHeight - 2,
                     }
                 });
-                window.addEventListener('keydown', (e) => {
+                // 移除旧的 keydown 监听器，避免重复绑定
+                if (keydownRef.current) {
+                    window.removeEventListener('keydown', keydownRef.current);
+                }
+                const onKeydown = (e: KeyboardEvent) => {
                     if ((e.ctrlKey || e.metaKey) && e.code == "KeyS") {
                         export_xlsx(spreadSheet, ext);
                     }
-                });
+                };
+                keydownRef.current = onKeydown;
+                window.addEventListener('keydown', onKeydown);
                 setLoading(false)
                 spreadSheet.loadData(sheets);
                 const endTime = Date.now();
@@ -53,6 +59,12 @@ export default function Excel() {
                 content: 'Save done',
             })
         }).emit("init")
+
+        return () => {
+            if (keydownRef.current) {
+                window.removeEventListener('keydown', keydownRef.current);
+            }
+        }
     }, [])
 
     return (

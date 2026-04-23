@@ -15,12 +15,14 @@ export default function Image() {
             setInfo(info)
         }).emit('images')
         let previous = 0;
-        addEventListener('wheel', (e) => {
+        const onWheel = (e: WheelEvent) => {
             if (new Date().getTime() - previous < 300) return;
             const current = gallery.current.getCurrentIndex();
             gallery.current.slideToIndex(current + (e.deltaY > 0 ? 1 : -1))
             previous = new Date().getTime();
-        })
+        };
+        addEventListener('wheel', onWheel)
+        return () => removeEventListener('wheel', onWheel)
     }, [])
     const images = info.images.map((image) => ({
         original: image.src,

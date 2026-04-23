@@ -8,9 +8,3 @@ export function getConfigs() {
     configs = JSON.parse(value);
     return configs;
 }
-
-// export function getConfig(key, defaultValue) {
-//     const config = configs?.config;
-//     if (!config) return false;
-//     return config[key] ?? defaultValue ?? false
-// }

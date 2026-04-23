@@ -124,7 +124,6 @@ export async function getToolbar(resPath) {
             }
         },
         "|",
-        "|",
         "edit-mode",
         "code-theme",
         // "|",

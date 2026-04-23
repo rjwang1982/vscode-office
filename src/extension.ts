@@ -39,15 +39,19 @@ async function activeHTTP(context: vscode.ExtensionContext) {
 }
 
 /**
- * Git History是生成一个临时文件, 因此这里无法控制
+ * 保持 Git diff 等场景使用默认编辑器，避免被本扩展接管。
  */
 function keepOriginDiff() {
-	const config = vscode.workspace.getConfiguration("workbench");
-	const configKey = 'editorAssociations'
-	const editorAssociations = config.get(configKey)
-	const key = '{git,gitlens,git-graph}:/**/*.{md,csv,svg}'
-	if (editorAssociations[key]) {
-		editorAssociations[key] = undefined
-		config.update(configKey, editorAssociations, true)
+	try {
+		const config = vscode.workspace.getConfiguration("workbench");
+		const configKey = 'editorAssociations'
+		const editorAssociations = config.get(configKey)
+		const key = '{git,gitlens,git-graph}:/**/*.{md,csv,svg}'
+		if (editorAssociations[key]) {
+			editorAssociations[key] = undefined
+			config.update(configKey, editorAssociations, true)
+		}
+	} catch (error) {
+		Output.debug('keepOriginDiff failed: ' + error)
 	}
 }

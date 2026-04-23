@@ -19,14 +19,26 @@ async function convertMarkdown(inputMarkdownFile, config) {
   const content = convertMarkdownToHtml(inputMarkdownFile, type, text, config)
   const html = mergeHtml(content, uri)
 
-  // insert mermaid script
+  // insert mermaid script (inline local file for offline support)
   const $ = require("cheerio").load(html);
   const containsMermaid = $('.mermaid').length > 0;
   if (containsMermaid) {
-      const mermaidScript = `
+      const mermaidLocalPath = path.resolve(__dirname, '..', 'resource', 'vditor', 'dist', 'js', 'mermaid', 'mermaid.min.js');
+      let mermaidScript;
+      if (fs.existsSync(mermaidLocalPath)) {
+          const mermaidCode = fs.readFileSync(mermaidLocalPath, 'utf8');
+          mermaidScript = `
+    <script>${mermaidCode}</script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+    `;
+      } else {
+          // fallback to CDN if local file not found
+          console.warn('[pretty-md-pdf] Local mermaid.min.js not found, falling back to CDN');
+          mermaidScript = `
     <script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({startOnLoad:true});</script>
     `;
+      }
 
     $('body').append(mermaidScript);
   }
