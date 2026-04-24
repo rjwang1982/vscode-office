@@ -6,6 +6,5 @@ package-lock.json
 .DS_Store
 yarn.lock
 test/
-image/mermaid_test/
-image/CHANGELOG/
+image/
 promo/

@@ -61,7 +61,7 @@ Right-click in the editor to export Markdown to PDF, DOCX, or HTML. PDF export r
 
 When exporting to HTML, local images are automatically embedded as Base64, so the exported file is fully self-contained and can be shared directly without losing any images.
 
-![Markdown Editor Screenshot](image/README-CN/screenshot.png)
+![Markdown Editor Screenshot](images/screenshot.png)
 
 Keyboard shortcuts are based on [Vditor shortcuts](shortcut.md), with additional commands:
 

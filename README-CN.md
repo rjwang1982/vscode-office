@@ -61,7 +61,7 @@
 
 导出 HTML 时，所有本地图片都会自动转换为 Base64 并嵌入文件中，因此导出的文件是完全独立的，分享时无需再附带图片资源。
 
-![Markdown 编辑器截图](image/README-CN/screenshot.png)
+![Markdown 编辑器截图](images/screenshot.png)
 
 快捷键基于 [Vditor 快捷键](shortcut.md)，并额外提供以下命令：
 
