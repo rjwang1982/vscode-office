@@ -17,6 +17,12 @@ vsc-extension-quickstart.md
 **/*.ts
 node_modules/
 vditor/
+test/
+image/CHANGELOG/**
+image/mermaid_test/**
+promo/
+images/logo.png
+images/logo-new.svg
 build.js
 build.ts
 public/
