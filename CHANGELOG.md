@@ -1,5 +1,8 @@
 # Change log
 
+# 3.7.2 2026-4-24 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Fix preview mode outline not showing all headings for large documents with many Mermaid charts.
+
 # 3.7.1 2026-4-23 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Fix Mermaid rendering: rebuild Vditor from source with `mermaid.run()` API, fixing chart cross-contamination in both editing and preview modes.
 - Fix Unicode 12.0+ geometric emoji (🟡🟢🟥⬜ etc.) not rendering in Vditor editor by injecting missing emoji mappings into Lute's dictionary.
