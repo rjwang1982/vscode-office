@@ -1,5 +1,8 @@
 # Change log
 
+# 3.7.3 2026-4-24 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Reduce package size: consolidate image assets, exclude dev/test files from vsix (8.6MB → 5.25MB).
+
 # 3.7.2 2026-4-24 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Fix preview mode outline not showing all headings for large documents with many Mermaid charts.
 
