@@ -1,5 +1,8 @@
 # Change log
 
+# 3.7.4 2026-5-9 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
+- Upgrade docx-preview from 0.3.0 to 0.3.7, improving Word table rendering (borders, merged cells, background colors).
+
 # 3.7.3 2026-4-24 (Maintained by RJ.Wang <wangrenjun@gmail.com>)
 - Reduce package size: consolidate image assets, exclude dev/test files from vsix (8.6MB → 5.25MB).
 

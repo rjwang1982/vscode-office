@@ -2,7 +2,7 @@
 	"name": "vscode-office-enhanced",
 	"displayName": "Office Viewer Enhanced",
 	"description": "Preview Word, Excel, PDF, Markdown, and more in VS Code and Kiro. Export self-contained HTML with embedded images and render Mermaid v11 diagrams.",
-	"version": "3.7.3",
+	"version": "3.7.4",
 	"publisher": "rjwang",
 	"icon": "images/logo-new.png",
 	"engines": {
@@ -518,7 +518,7 @@
 		"cheerio": "^1.0.0",
 		"chrome-finder": "^1.0.7",
 		"date-format": "^4.0.14",
-		"docx-preview": "^0.3.0",
+		"docx-preview": "^0.3.7",
 		"file-type": "^19.6.0",
 		"highlight.js": "^11.10.0",
 		"iconv-lite": "^0.6.3",
